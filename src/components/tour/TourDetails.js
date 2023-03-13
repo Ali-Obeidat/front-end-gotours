@@ -21,7 +21,7 @@ export default function TourDetails({ tour, isPending }) {
                             <div className="header__hero-overlay">
                                 &nbsp;
                             </div>
-                            <img className="header__hero-img" src={`http://127.1.0.1:3000/img/tours/${tour.data.doc.imageCover}`} alt={tour.data.doc.name} />
+                            <img className="header__hero-img" src={`https://dry-castle-66151.herokuapp.com/img/tours/${tour.data.doc.imageCover}`} alt={tour.data.doc.name} />
                         </div>
                         <div className="heading-box">
                             <h1 className="heading-primary">
@@ -90,8 +90,8 @@ export default function TourDetails({ tour, isPending }) {
                             <div className="cta__img cta__img--logo">
                                 <img src={whiteLogo} alt="jotours logo" className="" />
                             </div>
-                            <img src={`http://127.1.0.1:3000/img/tours/${tour.data.doc.images[1]}`} alt="" className="cta__img cta__img--1" />
-                            <img src={`http://127.1.0.1:3000/img/tours/${tour.data.doc.images[2]}`} alt="" className="cta__img cta__img--2" />
+                            <img src={`https://dry-castle-66151.herokuapp.com/img/tours/${tour.data.doc.images[1]}`} alt="" className="cta__img cta__img--1" />
+                            <img src={`https://dry-castle-66151.herokuapp.com/img/tours/${tour.data.doc.images[2]}`} alt="" className="cta__img cta__img--2" />
 
                             <div className="cta__content">
                                 <h2 className="heading-secondary">What are you waiting for?</h2>

@@ -12,7 +12,7 @@ export default function Review({ reviews }) {
                 {reviews.map((review) => (
                     <div className="reviews__card" key={review._id}>
                         <div className="reviews__avatar">
-                            <img src={`http://127.1.0.1:3000/img/users/${review.user.photo}`} alt="Jim Brown" className="reviews__avatar-img" />
+                            <img src={`https://dry-castle-66151.herokuapp.com/img/users/${review.user.photo}`} alt="Jim Brown" className="reviews__avatar-img" />
                             <h6 className="reviews__user">{review.user.name}</h6>
                         </div>
                         <p className="reviews__text">

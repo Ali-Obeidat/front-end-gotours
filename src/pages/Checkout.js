@@ -9,7 +9,7 @@ import '../components/checkout/checkout.css'
 
 export default function Checkout() {
   const { id } = useParams()
-  const [url] = useState(`http://127.1.0.1:3000/api/v1/tours/${id}`)
+  const [url] = useState(`https://dry-castle-66151.herokuapp.com/api/v1/tours/${id}`)
   const { data: tour } = useFetch(url)
 
 

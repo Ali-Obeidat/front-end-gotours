@@ -18,7 +18,7 @@ export default function ResetPassword() {
     const { getUser } = useUser()
     const { token } = useParams()
 
-    const { updateData, data, error, isPending, setError } = useFetch(`http://127.1.0.1:3000/api/v1/users/reset_password/${token}`, 'PATCH')
+    const { updateData, data, error, isPending, setError } = useFetch(`https://dry-castle-66151.herokuapp.com/api/v1/users/reset_password/${token}`, 'PATCH')
 
     const handleSubmit = async (e) => {
         e.preventDefault(true)

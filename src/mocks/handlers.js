@@ -2,7 +2,7 @@ import { rest } from 'msw'
 import { mockAllToursData } from '../mockData/mockAllToursData'
 
 export const handlers = [
-  rest.get('http://127.1.0.1:3000/api/v1/tours', (req, res, ctx) => {
+  rest.get('https://dry-castle-66151.herokuapp.com/api/v1/tours', (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({

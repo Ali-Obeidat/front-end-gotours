@@ -5,7 +5,7 @@ import { useFetch } from '../hooks/useFetch'
 
 function Home() {
 
-    const { data: tours, isPending, error } = useFetch('http://127.1.0.1:3000/api/v1/tours')
+    const { data: tours, isPending, error } = useFetch('https://dry-castle-66151.herokuapp.com/api/v1/tours')
     let tourList
     if (tours) {
         tourList = tours.data.doc.map(tour => (

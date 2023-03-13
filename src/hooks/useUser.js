@@ -9,7 +9,7 @@ export const useUser = () => {
                 Authorization: `Bearer ${token}`
             },
             method: 'GET',
-            url: 'http://127.1.0.1:3000/api/v1/users/me',
+            url: 'https://dry-castle-66151.herokuapp.com/api/v1/users/me',
         });
         return  res.data.data.doc
     }

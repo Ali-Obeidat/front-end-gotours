@@ -17,7 +17,7 @@ export default function PayForm({ tour, id }) {
     const navigate = useNavigate();
     const { user } = useAuthContext()
 
-    const { postData, data, error, isPending, setError } = useFetch('http://127.1.0.1:3000/api/v1/bookings/checkout', 'POST')
+    const { postData, data, error, isPending, setError } = useFetch('https://dry-castle-66151.herokuapp.com/api/v1/bookings/checkout', 'POST')
     const handelSubmit = async (e) => {
         e.preventDefault()
         postData({ tour: id, price: tour.data.doc.price })

@@ -8,7 +8,7 @@ import TourDetails from '../components/tour/TourDetails'
 
 export default function Tour() {
   const { id } = useParams()
-  const { data: tour, isPending, error } = useFetch(`http://127.1.0.1:3000/api/v1/tours/${id}`)
+  const { data: tour, isPending, error } = useFetch(`https://dry-castle-66151.herokuapp.com/api/v1/tours/${id}`)
   
   return (
 

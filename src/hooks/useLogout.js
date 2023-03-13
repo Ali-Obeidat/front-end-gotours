@@ -15,7 +15,7 @@ export const useLogout = () => {
         try {
             await axios({
                 method: 'get',
-                url: 'http://127.1.0.1:3000/api/v1/users/logout',
+                url: 'https://dry-castle-66151.herokuapp.com/api/v1/users/logout',
                 headers: {
                     "Content-Type": "application/json",
                     'Authorization': `Bearer ${token}`
