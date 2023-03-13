@@ -21,8 +21,6 @@ export default function Login() {
     login(email, password)
   }
 
-  console.log(error);
-
   return (
     <main className='main'>
       <div className='login-form'>

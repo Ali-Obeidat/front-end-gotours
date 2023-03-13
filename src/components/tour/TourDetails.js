@@ -1,5 +1,5 @@
 import { FaClock, FaMapMarkerAlt, FaRegCalendar, FaSortAmountUp, FaStar, FaUserAlt } from "react-icons/fa";
-import moment, { now } from 'moment/moment'
+import moment from 'moment/moment'
 import Loader from '../loader/Loader';
 import TourImages from './TourImages';
 import Review from './Review';
@@ -21,7 +21,7 @@ export default function TourDetails({ tour, isPending }) {
                             <div className="header__hero-overlay">
                                 &nbsp;
                             </div>
-                            <img className="header__hero-img" src={`https://dry-castle-66151.herokuapp.com/img/tours/${tour.data.doc.imageCover}`} alt={tour.data.doc.name} />
+                            <img className="header__hero-img" src={`http://127.1.0.1:3000/img/tours/${tour.data.doc.imageCover}`} alt={tour.data.doc.name} />
                         </div>
                         <div className="heading-box">
                             <h1 className="heading-primary">
@@ -48,8 +48,8 @@ export default function TourDetails({ tour, isPending }) {
                                     <h2 className="heading-secondary ma-bt-lg">Quick facts</h2>
                                     <div className="overview-box__detail">
                                         <FaRegCalendar className="overview-box__icon" />
-                                        <span className="overview-box__label">Next date</span>
-                                        <span className="overview-box__text">{moment(tour.data.doc.startDates[0]).format('LL')}</span>
+                                        <span className="overview-box__label">Tour date</span>
+                                        <span className={`${moment().format() > tour.data.doc.startDates[0] ? 'color-red overview-box__text' : 'overview-box__text' }`} >{moment(tour.data.doc.startDates[0]).format('LL')}</span>
                                     </div>
                                     <div className="overview-box__detail">
                                         <FaSortAmountUp className="overview-box__icon" />
@@ -90,8 +90,8 @@ export default function TourDetails({ tour, isPending }) {
                             <div className="cta__img cta__img--logo">
                                 <img src={whiteLogo} alt="jotours logo" className="" />
                             </div>
-                            <img src={`https://dry-castle-66151.herokuapp.com/img/tours/${tour.data.doc.images[1]}`} alt="" className="cta__img cta__img--1" />
-                            <img src={`https://dry-castle-66151.herokuapp.com/img/tours/${tour.data.doc.images[2]}`} alt="" className="cta__img cta__img--2" />
+                            <img src={`http://127.1.0.1:3000/img/tours/${tour.data.doc.images[1]}`} alt="" className="cta__img cta__img--1" />
+                            <img src={`http://127.1.0.1:3000/img/tours/${tour.data.doc.images[2]}`} alt="" className="cta__img cta__img--2" />
 
                             <div className="cta__content">
                                 <h2 className="heading-secondary">What are you waiting for?</h2>

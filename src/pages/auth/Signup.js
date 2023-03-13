@@ -69,7 +69,7 @@ export default function Signup() {
                             placeholder='••••••••'
                             minLength='8' />
                         {/* {error && <span className='error'>{error}</span>} */}
-                        {error && <Alert error={error} />}
+                        {error && <Alert type='error' setValue={setError} message={error} />}
 
                     </div>
                     <div className='form__group'>

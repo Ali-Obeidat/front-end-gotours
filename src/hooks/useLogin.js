@@ -26,7 +26,7 @@ export const useLogin = () => {
         try {
             const res = await axios({
                 method: 'POST',
-                url: 'https://dry-castle-66151.herokuapp.com/api/v1/users/login',
+                url: 'http://127.1.0.1:3000/api/v1/users/login',
                 data: {
                     email,
                     password
@@ -37,7 +37,6 @@ export const useLogin = () => {
             dispatch({ type: 'LOGIN', payload: user })
             setError(null)
             setIsPending(false)
-            console.log(state);
             if (state) {
                 navigate(state.prev)
             }
@@ -48,7 +47,6 @@ export const useLogin = () => {
                 
                 setError('')
             }, 3000)
-            console.log(err.response);
         }
     };
 

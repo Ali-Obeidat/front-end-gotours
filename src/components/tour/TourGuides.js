@@ -9,7 +9,7 @@ export default function TourGuides({ guides }) {
             {guides.map(guide => (
                 <div key={guide._id} className="overview-box__detail">
                     <img
-                        src={`https://dry-castle-66151.herokuapp.com/img/users/${guide.photo}`}
+                        src={`http://127.1.0.1:3000/img/users/${guide.photo}`}
                         alt={guide.role}
                         className="overview-box__img"
                     />

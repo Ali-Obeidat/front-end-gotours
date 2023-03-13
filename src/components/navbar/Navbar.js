@@ -58,7 +58,7 @@ export default function NavBar() {
                     className="nav-links "
                     onClick={click ? handleClick : null}
                   >
-                    <img src={`https://dry-castle-66151.herokuapp.com/img/users/${user.photo}`} alt="User" className="nav__user-img" />
+                    <img src={`http://127.1.0.1:3000/img/users/${user.photo}`} alt="User" className="nav__user-img" />
                     <span>{user.name.split(' ')[0]}</span>
                   </NavLink>
                 </li>

@@ -1,7 +1,7 @@
 import { ActionIcon, Box, Group, Text } from '@mantine/core';
 import axios from 'axios';
 import { DataTable } from 'mantine-datatable';
-import moment, { now } from 'moment';
+import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { FaEye } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
@@ -22,14 +22,13 @@ export default function Booking() {
                         Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`
                     },
                     method: 'GET',
-                    url: 'https://dry-castle-66151.herokuapp.com/api/v1/bookings/my',
+                    url: 'http://127.1.0.1:3000/api/v1/bookings/my',
                 });
 
                 setMyBooking(booking.data.data.data)
                 setIsPending(false)
             } catch (err) {
                 setIsPending(false)
-                console.log(err.response.data.message);
             }
         }
         unSub()
@@ -67,7 +66,7 @@ export default function Booking() {
                             title: 'Tour Image',
                             render: ({ tour }) => (
                                 <Group spacing={4} position="right" noWrap>
-                                    <img className='form__user-photo' src={`https://dry-castle-66151.herokuapp.com/img/tours/${tour.imageCover}`} alt='tour' />
+                                    <img className='form__user-photo' src={`http://127.1.0.1:3000/img/tours/${tour.imageCover}`} alt='tour' />
                                 </Group>
                             ),
                         },

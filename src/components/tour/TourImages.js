@@ -5,7 +5,7 @@ export default function TourImages({ imgs }) {
         <section className="section-pictures">
             {imgs.map((img, index) => (
                 <div className="picture-box" key={index}>
-                    <img className={`picture-box__img picture-box__img--${index + 1}`} src={`https://dry-castle-66151.herokuapp.com/img/tours/${img}`} alt="The Park Camper Tour 1" />
+                    <img className={`picture-box__img picture-box__img--${index + 1}`} src={`http://127.1.0.1:3000/img/tours/${img}`} alt="The Park Camper Tour 1" />
                 </div>
             ))}
         </section>

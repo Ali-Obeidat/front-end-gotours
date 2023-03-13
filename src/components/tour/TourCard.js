@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaMapMarkerAlt, FaCalendarAlt, FaFlag, FaUserAlt } from "react-icons/fa";
-import moment, { now } from 'moment/moment'
+import moment from 'moment/moment'
 import './tourCard.css'
 export default function TourCard({ tour }) {
     return (

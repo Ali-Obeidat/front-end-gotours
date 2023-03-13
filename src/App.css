@@ -571,6 +571,16 @@ body {
         flex-direction: column;
     }
 } */
+@media (min-width: 300px) and (max-width: 890px){
+    .main {
+        background-color: #f7f7f7;
+        padding: 8rem 0rem;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        position: relative;
+    }
+}
 
 @media (min-width: 900px) {
     .user-view__menu {

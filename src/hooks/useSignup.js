@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import {  useState } from "react"
 import { useAuthContext } from "./useAuthContext"
 import axios from 'axios'
 import { useLocalStorage } from './useLocalStorage'
@@ -17,7 +17,7 @@ export const useSignup = () => {
         try {
             const res = await axios({
                 method: 'POST',
-                url: 'https://dry-castle-66151.herokuapp.com/api/v1/users/signup',
+                url: 'http://127.1.0.1:3000/api/v1/users/signup',
                 data: {
                     name,
                     email,
@@ -34,7 +34,6 @@ export const useSignup = () => {
         } catch (err) {
             setIsPending(false)
             setError(err.response.data.message)
-            console.log(err.response.data.message);
         }
     };
 

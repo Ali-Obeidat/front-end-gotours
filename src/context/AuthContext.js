@@ -32,15 +32,14 @@ export const AuthContextProvider = ({ children }) => {
         const unSub = async () => {
             try {
                 const user = await getUser(JSON.parse(localStorage.getItem("token")))
-                // console.log('user', user);
                 dispatch({ type: 'AUTH_IS_READY', payload: user })
             } catch (err) {
+                // console.log(err);
                 dispatch({ type: 'AUTH_IS_READY', payload: null })
             }
         }
         unSub()
     }, [])
-    console.log('new state', state);
     return (
         <AuthContext.Provider value={{ ...state, dispatch }}>
             {children}

@@ -50,12 +50,10 @@ export const useFetch = (url, method = "GET") => {
           url,
           ...fetchOptions
         })
-        console.log('res', res);
         setIsPending(false)
         setData(res.data)
         setError(null)
       } catch (err) {
-        console.log(err.response.data.message);
         setIsPending(false)
         setError(err.response.data.message)
       }

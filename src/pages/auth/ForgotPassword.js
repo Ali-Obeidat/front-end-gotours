@@ -9,18 +9,19 @@ export default function ForgotPassword() {
     const [email, setEmail] = useState('')
     const [success, setSuccess] = useState('')
 
-    const { postData, data, error, isPending, setError } = useFetch('https://dry-castle-66151.herokuapp.com/api/v1/users/forgot_password', 'POST')
+    const { postData, data, error, isPending, setError } = useFetch('http://127.1.0.1:3000/api/v1/users/forgot_password', 'POST')
 
     const handleSubmit = async (e) => {
         e.preventDefault(true)
+        if (email === '') {
+            return setError('Please enter a your email address.')
+        }
         postData({ email })
     }
 
     useEffect(() => {
         if (data) {
-           console.log(data);
             setSuccess(data.message)
-           
         }
     }, [data])
     return (

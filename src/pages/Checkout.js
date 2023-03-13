@@ -2,19 +2,14 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 import PayForm from "../components/checkout/PayForm"
 import TourInfo from "../components/checkout/TourInfo"
-import { useAuthContext } from "../hooks/useAuthContext"
 import { useFetch } from "../hooks/useFetch"
 
 //! CSS Styles 
 import '../components/checkout/checkout.css'
+
 export default function Checkout() {
-
-
-  console.log(localStorage.getItem("token"));
   const { id } = useParams()
-
-
-  const [url] = useState(`https://dry-castle-66151.herokuapp.com/api/v1/tours/${id}`)
+  const [url] = useState(`http://127.1.0.1:3000/api/v1/tours/${id}`)
   const { data: tour } = useFetch(url)
 
 

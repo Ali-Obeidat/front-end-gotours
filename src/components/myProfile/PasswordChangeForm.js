@@ -1,4 +1,3 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 import { useAuthContext } from "../../hooks/useAuthContext"
 import { useFetch } from "../../hooks/useFetch"
@@ -13,7 +12,7 @@ export default function PasswordChangeForm() {
     const [passwordConfirm, setPasswordConfirm] = useState('')
     const [isUpdated, setIsUpdated] = useState(false)
     const [token, setToken] = useLocalStorage("token", localStorage.getItem("token"));
-    const { updateData, data, error, isPending, setError } = useFetch('https://dry-castle-66151.herokuapp.com/api/v1/users/update_password', 'PATCH')
+    const { updateData, data, error, isPending, setError } = useFetch('http://127.1.0.1:3000/api/v1/users/update_password', 'PATCH')
 
 
     const handleSubmit = async (e) => {
@@ -24,14 +23,11 @@ export default function PasswordChangeForm() {
         if (password === '' || passwordConfirm === '') {
             return setError('Please fill the field first!')
         }
-        console.log(password, passwordConfirm);
         updateData({ currentPassword, password, passwordConfirm }, 'json')
     }
 
     useEffect(() => {
         if (data) {
-            
-            console.log('data', data);
             setToken(data.token)
             setIsUpdated(true)
             dispatch({ type: 'UPDATE_USER', payload: user })

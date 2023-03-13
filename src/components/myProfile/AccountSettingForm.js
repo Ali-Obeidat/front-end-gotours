@@ -13,7 +13,7 @@ export default function AccountSettingForm() {
     const [image, setImage] = useState({ preview: '', data: '' })
 
 
-    const { updateData, data, error, isPending, setError } = useFetch('https://dry-castle-66151.herokuapp.com/api/v1/users/update_my_data', 'PATCH')
+    const { updateData, data, error, isPending, setError } = useFetch('http://127.1.0.1:3000/api/v1/users/update_my_data', 'PATCH')
     const handleSubmit = async (e) => {
         e.preventDefault()
         let formData = new FormData()
@@ -26,7 +26,6 @@ export default function AccountSettingForm() {
 
     useEffect(() => {
         if (data) {
-            console.log(data);
             setIsUpdated(true)
             dispatch({ type: 'UPDATE_USER', payload: data.data.updatedUser })
         }
@@ -60,7 +59,7 @@ export default function AccountSettingForm() {
                 </div>
                 <div className='form__group form__photo-upload'>
                     {image.preview ? <img className='form__user-photo' src={image.preview} alt='User' />
-                        : <img className='form__user-photo' src={`https://dry-castle-66151.herokuapp.com/img/users/${user.photo}`} alt='User' />}
+                        : <img className='form__user-photo' src={`http://127.1.0.1:3000/img/users/${user.photo}`} alt='User' />}
 
                     <input className='form__upload' id='photo' name='photo'
                         onChange={handleFileChange}

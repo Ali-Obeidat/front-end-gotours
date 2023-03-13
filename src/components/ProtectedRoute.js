@@ -1,12 +1,11 @@
 import React from 'react'
 
 import {
-    Navigate, Outlet, useNavigate,
+    Navigate,  useNavigate,
 } from 'react-router-dom';
 import { useAuthContext } from '../hooks/useAuthContext';
 export default function ProtectedRoute({ children }) {
     const { user } = useAuthContext()
-    const navigate = useNavigate();
 
     if (!user) {
 
